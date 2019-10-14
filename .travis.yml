@@ -1,0 +1,13 @@
+language: csharp
+solution: TravisBuildTestWebApp/TravisBuildTestWebApp.sln
+mono: none
+sudo: required
+dist: bionic
+dotnet: 2.2
+script:
+    - dotnet restore
+    - dotnet build
+    - dotnet test NUnitTestProject1/NUnitTestProject1.csproj --filter TestCategory!=OPTIONAL-TEST
+global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+    - DOTNET_CLI_TELEMETRY_OPTOUT=1
