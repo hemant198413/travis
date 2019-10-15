@@ -6,7 +6,7 @@ dist: bionic
 dotnet: 2.2
 script:
     - dotnet restore
-    - dotnet build
+    - dotnet build TravisBuildTestWebApp/TravisBuildTestWebApp.sln
     - dotnet test NUnitTestProject1/NUnitTestProject1.csproj --filter TestCategory!=OPTIONAL-TEST
 global:
     - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
