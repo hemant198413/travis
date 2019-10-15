@@ -5,7 +5,7 @@ sudo: required
 dist: bionic
 dotnet: 2.2
 script:
-    - dotnet restore
+    - dotnet restore TravisBuildTestWebApp/TravisBuildTestWebApp.sln
     - dotnet build TravisBuildTestWebApp/TravisBuildTestWebApp.sln
     - dotnet test NUnitTestProject1/NUnitTestProject1.csproj --filter TestCategory!=OPTIONAL-TEST
 global:
